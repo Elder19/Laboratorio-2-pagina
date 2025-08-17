@@ -44,19 +44,19 @@ Se ejecutó Lighthouse sobre la URL de Netlify seleccionando las categorías:
 
 | Categoría       | Puntuación |
 |-----------------|------------|
-| Accessibility   | 94/100     |
+| Accessibility   | 96/100     |
 | SEO             | 91/100     |
-| Recomendaciones | 100/100    |
-| SEO             | 90/100     |
+| Recomendaciones | 96/100    |
+
 
 - **Capturas:**  
   ![Captura Accessibility](assets/lighthouse-accessibility.png)  
   
 
-- **Plan de mejoras:**  
+- **Plan de mejoras accessibility :**  
   - Mejorar el tamaño y separacion de los patrocinadores
-  - Corregir orden de orden de encabezado en administrativo elder (corregido)
-
+- **Plan de mejoras SEO :**  
+  -Se pueden incluir metadescripciones en los resultados de la búsqueda para resumir el contenido de la página. 
 ---
 
 ## Accesibilidad aplicada
