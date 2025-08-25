@@ -1,9 +1,8 @@
-/* Contenedor reutilizable */
+
 .container {
   margin: 2rem auto;
   padding: 2rem 1rem;
   max-width: 1200px;
-
 }
 header {
   display: flex;
@@ -40,10 +39,9 @@ h2 {
   margin-top: 1.5rem;
 }
 #administrativo {
-  background:rgb(159, 196, 206);
+  background: rgb(159, 196, 206);
   padding: 1rem;
   border: 1px solid #ccc;
-  
 }
 #administrativo h2,
 #administrativo article {

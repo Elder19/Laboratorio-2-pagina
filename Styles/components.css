@@ -1,4 +1,4 @@
-/* Evitar que el primer li de patrocinadores herede el estilo de ul li:first-child global */
+
 #patrocinadores ul li:first-child {
   font-weight: normal;
   background: none;
