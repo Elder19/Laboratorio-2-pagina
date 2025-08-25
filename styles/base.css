@@ -1,0 +1,50 @@
+/* Box-sizing global */
+* {
+  box-sizing: border-box;
+}
+header,
+nav,
+section,
+footer,
+h1,
+h2,
+p {
+  margin-bottom: 1rem;
+}
+
+header > nav {
+  .card .badge {
+    background: purple !important;
+  }
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+nav a + a {
+  margin-left: 10px;
+  background-repeat: auto;
+  padding: 16px;
+}
+
+.container {
+  max-width: 660px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 7px;
+}
+
+#agenda {
+  background: #e9f1f3;
+  padding: 12px;
+}
+#Administrativo {
+  padding: 12px;
+}

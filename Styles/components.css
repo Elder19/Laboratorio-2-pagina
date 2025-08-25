@@ -1,0 +1,92 @@
+/* Evitar que el primer li de patrocinadores herede el estilo de ul li:first-child global */
+#patrocinadores ul li:first-child {
+  font-weight: normal;
+  background: none;
+  max-width: none;
+  text-align: left;
+}
+.premio p {
+  max-height: 80px;
+  overflow: auto;
+}
+.btn {
+  background: green;
+  color: rgb(19, 19, 19);
+  padding: 10px 18px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s;
+}  
+.btn:hover {
+  transform: translateY(-2px);
+  background: yellowgreen;
+}
+.btn:focus-visible {
+  outline: 3px solid var(--c-accent);
+}
+.btn:active {
+  transform: translateY(0);
+}
+
+.card {
+  background: rgb(159, 196, 206);
+  padding: 16px;
+  border: 1px solid #19b40b;
+  border-radius: 12px;
+  position: relative; 
+}
+
+.card p {
+  margin-top: 8px;
+}
+
+.badge {
+  background: var(--c-accent);
+  color: #fff;
+  padding: 2px 6px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  position: absolute; 
+  top: 8px;
+  right: 8px;
+}
+
+
+a[target="_blank"] {
+  text-decoration: underline;
+}
+img[alt] {
+  border-radius: 4px;
+}
+input[type="email"] {
+  border: 2px solid var(--c-accent);
+}
+a[href^="https://"]
+{
+  font-weight: bold;
+}
+a[href$=".pdf"] {
+  color: red;
+}
+
+
+ul li:first-child {
+  font-weight: bold;
+  background: #c5c51a;
+  max-width: 220px;
+  text-align: right;
+  
+}
+ul li:last-child {
+  opacity: 0.9;
+}
+ol li:nth-first-child {
+  background: #76a74e;
+}
+ol li:nth-child(2n) {
+  background: #c3d806;
+}
+ol li:not(:last-child) {
+  border-bottom: 1px solid #cccccc;
+}

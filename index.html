@@ -4,80 +4,101 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hackathon 2025</title>
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/layout.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/overrides.css" />
   </head>
   <body>
     <!--Parte superior accesos rapidos-->
-    <header>
-      <img src="assets/TEC.png" alt="Logo de la institucion"/>
-      <h1>Hackathon 2025</h1>
-      <nav aria-label="Menú">
-        <a href="#sobre">Sobre el evento</a>
-        <a href="#agenda">Agenda</a>
-        <a href="#administrativo">Personal administrativo</a>
-        <a href="#registro">Registro</a>
-        <a href="#ubicacion">Ubicación</a>
-       
+    <header class="container">
+      <img src="assets/TEC.png" alt="Logo de la institucion" />
+      <h1 style="margin-bottom: 24px">Hackathon 2025</h1>
+      <nav aria-label="Menú" class="nav-flex">
+        <a href="#sobre" data-link="sobre">Sobre el evento</a>
+        <a href="#agenda" data-link="agenda">Agenda</a>
+        <a href="#administrativo" data-.card link="admin"
+          >Personal administrativo</a
+        >
+        <a href="#registro" data-link="registro">Registro</a>
+        <a href="#ubicacion" data-link="ubicacion">Ubicación</a>
       </nav>
     </header>
 
     <main>
       <!-- Seccion que describe el evento y algunas reglas -->
-      <section id="sobre">
+      <section id="sobre" class="container card">
         <h2>Sobre el Hackathon</h2>
         <figure>
-          <img src="assets/Hackathon.png" alt="Imagen alusiva al evento"/>
+          <img src="assets/Hackathon.png" alt="Imagen alusiva al evento" />
           <figcaption>
             Donde los desarrolladores se convierten en heroes!
           </figcaption>
         </figure>
         <p>
           ¡Participa en la actividad más esperada del año en el TEC! Ven,
-          demuestra tus habilidades y compite contra tus compañeros. Habrá
-          premios por participación, comida, certificados y un gran premio para un estudiante que logre destacar.
-           Regístrate con tu equipo de al menos
-          5 participantes; no hay restricciones, siempre y cuando sean
-          estudiantes activos.
+          demuestra tus habilidades y compite contra tus compañeros...
         </p>
-       <aside>
-          <h2>Premio del Hackathon</h2>
-          <img src="assets/Premio.Webp" alt="Premio mayor del hackathon" tabindex="-1" />
-          <p>Un participante podra ganar de forma individual un kit tecnologico exclusivo.</p>
+        <aside class="card premio">
+          <h3>Premio del Hackathon <span class="badge">Nuevo</span></h3>
+          <img
+            src="assets/Premio.Webp"
+            alt="Premio mayor del hackathon"
+            tabindex="-1"
+          />
+          <p>
+            Un participante podrá ganar de forma individual un kit tecnológico
+            exclusivo con accesorios premium muy largos que podrían provocar
+            desbordamiento de texto en este contenedor de premio. El kit
+            incluye:
+            <br />• Laptop ASUS ROG Strix G16, Intel Core i9-13980HX, 32GB RAM
+            DDR5, 1TB SSD NVMe, RTX 4070 8GB GDDR6. <br />• Monitor 27" 2K 165Hz
+            IPS, teclado mecánico RGB, mouse gamer 16,000 DPI, audífonos
+            inalámbricos con cancelación de ruido. <br />• Silla ergonómica,
+            alfombrilla XL, hub USB-C, base refrigerante, mochila antirrobo, y
+            más accesorios para potenciar tu experiencia gamer y profesional.
+          </p>
         </aside>
-
-      </section>S
+      </section>
 
       <!--agenda -->
-      <section id="agenda">
+      <section id="agenda" class="container">
         <h2>Agenda</h2>
         <ol>
           <li>09:00 - 10:00: Registro y bienvenida</li>
-          <li>10:00 - 12:00: Charla sobre la importancia del evento y reglas del mismo</li>
+          <li>
+            10:00 - 12:00: Charla sobre la importancia del evento y reglas del
+            mismo
+          </li>
           <li>12:00 - 13:00: Almuerzo</li>
-          <li>13:00 - 18:00: Desarrollo de proyectos competivos</li>
+          <li>13:00 - 18:00: Desarrollo de proyectos competitivos</li>
           <li>18:00 - 19:00: Premiación</li>
         </ol>
       </section>
-      <section id="Equipos registrados"></section>
+
+      <section id="equipos" class="container card">
         <h3>Equipos registrados</h3>
         <table>
           <thead>
             <tr>
               <th>Equipo</th>
               <th>Lugar</th>
+              <th>Email</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td>Prueba 1</td>
-               <td>0</td>
+              <td>0</td>
+              <td>equipo1@ejemplo.com</td>
             </tr>
           </tbody>
         </table>
       </section>
 
       <!-- Seccion de encargados -->
-      <section id="administrativo">
-        <h2>Personal administrativo</h2>
+      <section id="administrativo" class="container grid">
+        <h2 id="personal-administrativo">Personal administrativo</h2>
         <ul>
           <li>
             <article>
@@ -85,76 +106,95 @@
               <img
                 src="assets/ELDER.jpg"
                 alt="Foto de ELDER estudiante de computacion"
-                style="width: 150px; height: auto;"
+                style="width: 150px; height: auto"
                 tabindex="0"
               />
-
               <p>
-                <strong>Elder Leon</strong> estudiante de 3° año . <br>
-                <strong>Información de contacto:</strong><br>
-                Teléfono: 71950212<br>
+                <strong>Elder Leon</strong> estudiante de 3° año . <br />
+                <strong>Contacto </strong><br />
+                Teléfono: 71950212<br />
                 Correo electrónico: eleon@estudiantec.cr
-
               </p>
             </article>
           </li>
-        </ul> 
+        </ul>
       </section>
 
       <!-- Seccion de registro -->
-      <section id="registro">
+      <section id="registro" class="container card">
         <h2>Registro</h2>
         <form>
           <label for="nombre">Nombre de equipo:</label>
           <input type="text" id="nombre" name="nombre" required />
 
-         <label for="numero">Contacto de capitán:</label>
-         <input type="tel" id="numero" name="numero" required 
-              placeholder="+506 8888-8888"  />
+          <label for="correo">Correo de capitán: </label>
+          <input type="email" id="correo" name="correo" required />
+
+          <label for="numero">Contacto de capitán:</label>
+          <input
+            type="tel"
+            id="numero"
+            name="numero"
+            required
+            placeholder="+506 8888-8888"
+          />
+
           <p>¿Equipo completo?</p>
           <label>
-            <input type="radio" name="equipoCompleto" value="si"> Sí
+            <input type="radio" name="equipoCompleto" value="si" /> Sí
           </label>
           <label>
-            <input type="radio" name="equipoCompleto" value="no"> No
+            <input type="radio" name="equipoCompleto" value="no" /> No
           </label>
-          <button type="submit" aria-label="Enviar registro al evento">
+          <button
+            class="btn"
+            type="submit"
+            aria-label="Enviar registro al evento"
+          >
             Registrarse
           </button>
-         
         </form>
-         <blockquote>
-          "El juego es la forma más elevada de investigación."  Albert Einstein
+        <blockquote>
+          "El juego es la forma más elevada de investigación." Albert Einstein
         </blockquote>
-        
       </section>
 
       <!-- Seccion de ubicacion -->
-      <section id="ubicacion">
+      <section id="ubicacion" class="container card">
         <h2>Ubicación</h2>
-        <p>
-          TEC Centro Académico de Limón
-        </p>
-       <a href="https://share.google/aoDpfjgcsiVrvnwgr" target="_blank">
+        <p>TEC Centro Académico de Limón</p>
+        <a href="https://share.google/aoDpfjgcsiVrvnwgr" target="_blank">
           Ver en Google Maps
         </a>
-        
       </section>
-
     </main>
-    <!-- Seccion patrocinadores -->
-    <section id="patrocinadores">
-        <h2>Patrocinadores</h2>
-        <ul>
-          <li><a href="https://extremetechcr.com/" target="_blank" rel="noopener noreferrer">Extreme Tech</a></li>
-          <li><a href="https://www.tec.ac.cr/" target="_blank" rel="noopener noreferrer">TEC Costa Rica</a></li>
-        </ul>
 
+    <!-- Seccion patrocinadores -->
+    <section id="patrocinadores" class="container card">
+      <h2>Patrocinadores</h2>
+      <ul>
+        <li>
+          <a
+            href="https://extremetechcr.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Extreme Tech</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://www.tec.ac.cr/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >TEC Costa Rica</a
+          >
+        </li>
+      </ul>
     </section>
 
     <!-- FOOTER -->
-    <footer>
-      <p>&copy; 2025 Hackathon .</p>
+    <footer class="container">
+      <p>&copy; 2025 Hackathon.</p>
       <p>Contacto: Colegioempresarial20@gmail.com</p>
       <p>Tel: 71950212</p>
     </footer>
