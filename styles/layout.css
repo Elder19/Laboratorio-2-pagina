@@ -1,0 +1,52 @@
+
+.container {
+  margin: 2rem auto;
+  padding: 2rem 1rem;
+  max-width: 1200px;
+}
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  background: #f5f5f5;
+  color: #222;
+}
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+  background: gold;
+}
+section {
+  margin-bottom: 2rem;
+}
+img {
+  max-width: 80%;
+}
+p {
+  line-height: 1.6;
+}
+h1,
+h2 {
+  font-family: var(--font-family);
+  margin-bottom: 1.5rem;
+}
+
+.card {
+  margin-top: 1.5rem;
+}
+#administrativo {
+  background: rgb(159, 196, 206);
+  padding: 1rem;
+  border: 1px solid #ccc;
+}
+#administrativo h2,
+#administrativo article {
+  margin-top: 0;
+  text-align: center;
+  margin-left: 0;
+  margin-right: 0;
+}
