@@ -1,80 +1,71 @@
-# Hackathon 2025
-
-Bienvenido al sitio oficial del **Hackathon 2025** en el TEC Centro Académico de Limón.  
-Este sitio web presenta la información del evento, agenda, registro de equipos, ubicaciones y patrocinadores, usando HTML semántico y buenas prácticas de accesibilidad.
+# Documentación de selectores y requerimientos del laboratorio
 
 ---
 
-## Estructura semántica
+**Selectores de tipo:**
 
-El sitio utiliza las siguientes etiquetas clave:
+- Aplicados en: `header`, `nav`, `section`, `img`, `p`, `h1`, `h2`
 
-- `<header>`: Contiene el logo, título y menú de navegación.
-- `<nav>`: Menú con enlaces internos a secciones principales.
-- `<main>`: Contenido principal del sitio.
-- `<section>`: Secciones como "Sobre el evento", "Agenda", "Registro", etc.
-- `<article>`: Información individual de cada miembro del personal administrativo.
-- `<aside>`: Información complementaria, como el premio del Hackathon.
-- `<figure>` y `<figcaption>`: Imagen alusiva al evento con su descripción.
-- `<footer>`: Información de contacto y derechos de autor.
-- `<form>`: Registro de equipos con campos de texto, teléfono y radio buttons.
-- `<table>`: Tabla de equipos registrados.
-- `<blockquote>`: Cita destacada de Albert Einstein.
+**Selectores de clase:**
 
----
+- `.btn` en botones de formularios (components.css)
+- `.card` en secciones como "Sobre el evento", "Equipos registrados" (components.css)
+- `.badge` en el span de "Nuevo" en el premio (components.css)
+- `.premio` en el aside del premio (components.css)
 
-## URL pública
+**Selectores de ID:**
 
-El sitio está desplegado en Netlify y puede visitarse en:  
- [Hackathon TEC 2025](https://hackathontec.netlify.app/)
+- `#agenda` en la sección de agenda (base.css/layout.css)
+- `#administrativo` en la sección de personal administrativo (layout.css)
+- `#equipos`, `#registro`, `#ubicacion`
 
----
+**Selectores de atributo:**
 
-## Validación W3C
+- `a[target="_blank"]` en enlaces externos (components.css)
+- `img[alt]` en imágenes (components.css)
+- `input[type="email"]` en formularios (components.css)
+- `a[href^="https://"]` en enlaces externos (components.css)
 
-- Se validó el HTML con el [Validador de W3C](https://validator.w3.org/).
-- **Resumen**: El documento cumple con la mayoría de las normas, incluyendo uso de etiquetas semánticas, atributos `alt` en imágenes y jerarquía de encabezados.
-- ![Captura W3C](assets/imagen1.png)
-- ![Captura W3C](assets/imagen2.png)
+**Combinadores:**
 
----
+- `nav a + a` en el menú de navegación (base.css/components.css)
+- `.card p` en tarjetas (components.css)
+- `header > nav` en el header (base.css)
 
-## Lighthouse
+**Pseudo-clases de estado:**
 
-Se ejecutó Lighthouse sobre la URL de Netlify seleccionando las categorías:
+- `:hover` en `.btn` (components.css)
+- `:focus-visible` en `.btn` (components.css)
+- `:active` en `.btn` (components.css)
 
-| Categoría       | Puntuación |
-| --------------- | ---------- |
-| Accessibility   | 96/100     |
-| SEO             | 91/100     |
-| Recomendaciones | 100/100    |
+**Pseudo-clases estructurales:**
 
-- **Capturas:**  
-  ![Captura Accessibility](assets/lighthouse-accessibility.png)
+- `ul li:first-child` y `ul li:last-child` en listas (components.css)
+- `ol li:nth-child(2n)` en listas ordenadas (components.css)
+- `ol li:not(:last-child)` en listas ordenadas (components.css)
 
-- **Plan de mejoras accessibility :**
-  - Mejorar el tamaño y separacion de los patrocinadores
-- **Plan de mejoras SEO :**  
-  -Se pueden incluir metadescripciones en los resultados de la búsqueda para resumir el contenido de la página.
+**Especificidad (!important e inline style):**
 
----
+- `.card .badge` sobrescrito con `!important` en overrides.css
+- Estilo en línea en `<h1 style="margin-bottom: 24px">` en index.html
 
-## Accesibilidad aplicada
+**Box model:**
 
-- **`tabindex`**:
+- Aplicado en `.card` y `.container` (components.css, layout.css)
+- Márgenes y paddings en secciones y títulos (layout.css, base.css)
 
-  - Imagen del premio `tabindex="-1"` → permite saltar la imagen en el tabulado si se desea.
-  - Foto de Elder `tabindex="0"` → accesible con teclado, destacando información importante.
+**Overflow:**
 
-- **`aria-label`**:
+- En el párrafo largo dentro de `.premio` (components.css)
 
-  - Botón de registro con `aria-label="Enviar registro al evento"` → proporciona contexto a lectores de pantalla.
+**Flexbox:**
 
-- **`alt`**:
+- En `nav` para alinear enlaces (layout.css, base.css)
 
-  - Todas las imágenes incluyen texto alternativo descriptivo, por ejemplo: `"Premio mayor del hackathon"`.
+**Grid:**
 
-- **Enlaces descriptivos**:
-  - Menú y enlaces externos usan texto claro, por ejemplo: `"Ver en Google Maps"`, `"Extreme Tech"`, `"TEC Costa Rica"`.
+- En `.grid` para organizar tarjetas de personal y patrocinadores (base.css)
 
----
+**Position relative/absolute:**
+
+- `.card` como contenedor `relative` y `.badge` como elemento `absolute` (components.css)
