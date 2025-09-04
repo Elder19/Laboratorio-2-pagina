@@ -13,14 +13,22 @@
     <header class="container">
       <img src="assets/TEC.png" alt="Logo de la institucion" />
       <h1 style="margin-bottom: 24px">Hackathon 2025</h1>
-      <nav aria-label="Menú" class="nav-flex">
-        <a href="#sobre" data-link="sobre">Sobre el evento</a>
-        <a href="#agenda" data-link="agenda">Agenda</a>
-        <a href="#administrativo" data-.card link="admin"
-          >Personal administrativo</a
+      <nav aria-label="Menú" class="nav-flex" id="main-nav">
+        <button
+          id="menu-toggle"
+          aria-controls="main-nav-list"
+          aria-expanded="false"
+          class="menu-btn"
         >
-        <a href="#registro" data-link="registro">Registro</a>
-        <a href="#ubicacion" data-link="ubicacion">Ubicación</a>
+          ☰
+        </button>
+        <ul id="main-nav-list">
+          <li><a href="#sobre">Sobre el evento</a></li>
+          <li><a href="#agenda">Agenda</a></li>
+          <li><a href="#administrativo">Personal administrativo</a></li>
+          <li><a href="#registro">Registro</a></li>
+          <li><a href="#ubicacion">Ubicación</a></li>
+        </ul>
       </nav>
     </header>
 
@@ -97,7 +105,7 @@
         <h2 id="personal-administrativo">Personal administrativo</h2>
         <ul>
           <li>
-            <article>
+            <article id="PresentacionPersonal">
               <h3>Elder Leon</h3>
               <img
                 src="assets/ELDER.jpg"
@@ -190,5 +198,6 @@
       <p>Contacto: Colegioempresarial20@gmail.com</p>
       <p>Tel: 71950212</p>
     </footer>
+    <script src="menu.js"></script>
   </body>
 </html>
