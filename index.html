@@ -10,15 +10,17 @@
     <link rel="stylesheet" href="styles/overrides.css" />
   </head>
   <body>
+    <img src="assets/TEC.png" class="Tecimage" alt="Logo de la institucion" />
     <header class="container">
-      <img src="assets/TEC.png" alt="Logo de la institucion" />
-      <h1 style="margin-bottom: 24px">Hackathon 2025</h1>
-      <nav aria-label="Menú" class="nav-flex" id="main-nav">
+      <h1>Hackathon 2025</h1>
+      
+      <nav aria-label="Menú principal" id="main-nav" aria-expanded="false">
         <button
           id="menu-toggle"
           aria-controls="main-nav-list"
           aria-expanded="false"
           class="menu-btn"
+          type="button"
         >
           ☰
         </button>
@@ -35,12 +37,25 @@
     <main>
       <section id="sobre" class="container card">
         <h2>Sobre el Hackathon</h2>
-        <figure>
-          <img src="assets/Hackathon.png" alt="Imagen alusiva al evento" />
-          <figcaption>
-            Donde los desarrolladores se convierten en heroes!
-          </figcaption>
-        </figure>
+        <div class="hero-art-wrapper">
+          <!-- Elementos decorativos solo desktop/tablet -->
+          <picture class="decorativo-desktop" aria-hidden="true">
+            <source srcset="assets/Carreta-típica-CR.png" media="(min-width:1024px)">
+            <source srcset="assets/costa-rica-flag-with-grunge-texture-png.webp" media="(min-width:768px)">
+            <img src="assets/coraxzon.png" alt="" style="width:110px;height:auto;" />
+          </picture>
+          <figure>
+            <img
+              src="assets/Hackathon.png"
+              alt="Imagen alusiva al evento Hackathon 2025"
+              style="width: 100%; height: auto"
+            />
+            <figcaption>
+              Donde los desarrolladores se convierten en héroes!
+            </figcaption>
+          </figure>
+        </div>
+
         <p>
           ¡Participa en la actividad más esperada del año en el TEC! Ven,
           demuestra tus habilidades y compite contra tus compañeros...

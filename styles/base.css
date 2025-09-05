@@ -1,3 +1,29 @@
+/* --- REGLAS GLOBALES ANTI-SCROLL HORIZONTAL Y RESPONSIVE --- */
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+img,
+iframe,
+table {
+  max-width: 100%;
+  height: auto;
+  box-sizing: border-box;
+}
+
+th,
+td {
+  word-break: break-word;
+}
+
+/* Evitar anchos fijos que rompan el viewport */
+[style*="width"] {
+  max-width: 100vw !important;
+  box-sizing: border-box;
+}
+
 *,
 header,
 nav,
@@ -10,20 +36,33 @@ p {
   box-sizing: border-box;
 }
 
-/* ESTILOS GENERALES */
 body {
   font-size: 16px;
 }
 
+/* Header */
+header.container {
+  display: flex;
+  flex-direction: column; /* h1 arriba, nav abajo */
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: white;
+  border-bottom: 1px solid #ddd;
+}
+
+header.container h1 {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+/* Nav */
 header > nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 12px;
-}
-
-header > nav .card .badge {
-  background: purple !important;
 }
 
 nav a + a {
@@ -32,6 +71,7 @@ nav a + a {
   text-decoration: none;
 }
 
+/* Contenedores y grid */
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -44,6 +84,7 @@ nav a + a {
   gap: 1rem;
 }
 
+/* Secciones */
 #agenda {
   background: #e9f1f3;
   padding: 1rem;
@@ -66,67 +107,89 @@ nav a + a {
   max-width: 400px;
 }
 
-/* BOTÓN DE MENÚ */
-
-/* El botón hamburguesa solo se muestra en móviles <= 480px */
+/* Botón de menú */
 .menu-btn {
-  display: none;
+  display: none; /* por defecto oculto */
 }
 
-@media (max-width: 480px) {
-  .menu-btn {
-    display: block;
-    background: none;
-    border: none;
-    font-size: 2rem;
-    cursor: pointer;
-  }
-  #main-nav-list {
-    display: none;
-  }
-  #main-nav[aria-expanded="true"] #main-nav-list {
-    display: flex;
-  }
-}
-
-/* NAV PRINCIPAL */
+/* Menú principal */
 #main-nav-list {
   display: flex;
-  gap: 1rem;
+  gap: 2rem;
   list-style: none;
 }
 
-/* MÓVILES PEQUEÑOS */
+/* ----------------- MÓVIL (≤480px) ----------------- */
 @media (max-width: 480px) {
+  /* H1 arriba y nav debajo */
+  header.container {
+    flex-direction: column;
+    padding: 0.5rem;
+  }
+
+  header.container h1 {
+    font-size: 1.2rem;
+    margin: 0;
+    white-space: normal;
+    overflow: visible;
+  }
+
   .menu-btn {
     display: block;
-  }
-  body {
-    font-size: 14px;
-    background-color: bisque;
+    font-size: 1.5rem;
+    background: gray;
+    border-radius: 20%;
+    overflow: visible;
+    cursor: pointer;
+    flex: 0 0 auto;
   }
 
-  header > nav {
-    gap: 1rem;
+  #main-nav {
+    background: none !important;
+    position: relative;
+
   }
 
   #main-nav-list {
-    display: none;
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgb(179, 207, 126);
     flex-direction: column;
+    text-align: center;
     gap: 1rem;
-    padding: 0;
+    padding: 1rem;
     margin: 0;
+    border-top: 1px ;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, opacity 0.3s ease;
+    z-index: 999;
+    overflow: visible;
   }
+   #main-nav-list li {
+    width: 100%;
+  }
+
+  #main-nav-list li a {
+    display: block;
+    text-align: center; /* left / center / right */
+    padding: 0.5rem 1rem;
+  }
+
   #main-nav[aria-expanded="true"] #main-nav-list {
-    display: flex;
+    max-height: 500px;
+    opacity: 1;
   }
 }
 
-/* MÓVILES/ TABLET */
-@media (max-width: 768px) {
+/* ----------------- TABLET (481px–1023px) ----------------- */
+@media (min-width: 481px) and (max-width: 1023px) {
   body {
-    font-size: 16px;
-    background-color: rgb(76, 230, 15);
+    background-color: rgb(247, 38, 1);
   }
 
   .menu-btn {
@@ -135,15 +198,17 @@ nav a + a {
 
   #main-nav-list {
     display: flex;
-    gap: 7rem;
-    list-style: none;
+    gap: 2rem;
+    position: static;
+    max-height: none;
+    opacity: 1;
+    flex-direction: row;
   }
 }
 
-/* DESKTOP GRANDE */
+/* ----------------- DESKTOP (≥1024px) ----------------- */
 @media (min-width: 1024px) {
   body {
-    font-size: 16px;
     background-color: rgb(76, 230, 15);
   }
 
@@ -154,6 +219,9 @@ nav a + a {
   #main-nav-list {
     display: flex;
     gap: 7rem;
-    list-style: none;
+    position: static;
+    max-height: none;
+    opacity: 1;
+    flex-direction: row;
   }
 }
