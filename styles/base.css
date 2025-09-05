@@ -1,8 +1,9 @@
 /* --- REGLAS GLOBALES ANTI-SCROLL HORIZONTAL Y RESPONSIVE --- */
 html,
 body {
-  max-width: 100vw;
+  max-width: 100%;
   overflow-x: hidden;
+  background-color: aqua;
 }
 
 img,
@@ -34,6 +35,7 @@ h2,
 p {
   margin-bottom: 1rem;
   box-sizing: border-box;
+  max-width: auto;
 }
 
 body {
@@ -73,7 +75,7 @@ nav a + a {
 
 /* Contenedores y grid */
 .container {
-  max-width: 1200px;
+  max-width: 100%;
   margin: 0 auto;
   padding: 1rem;
 }
@@ -82,6 +84,7 @@ nav a + a {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 1rem;
+  background-color: aliceblue;
 }
 
 /* Secciones */
@@ -92,6 +95,7 @@ nav a + a {
 
 #Administrativo {
   padding: 1rem;
+
 }
 
 #PresentacionPersonal {
@@ -104,7 +108,7 @@ nav a + a {
 
 #PresentacionPersonal ol li:nth-child(2) {
   width: 100%;
-  max-width: 400px;
+  max-width: 100%;
 }
 
 /* Botón de menú */
@@ -156,7 +160,7 @@ nav a + a {
     top: 100%;
     left: 0;
     right: 0;
-    background: rgb(179, 207, 126);
+    background: rgb(252, 252, 252);
     flex-direction: column;
     text-align: center;
     gap: 1rem;
@@ -189,7 +193,7 @@ nav a + a {
 /* ----------------- TABLET (481px–1023px) ----------------- */
 @media (min-width: 481px) and (max-width: 1023px) {
   body {
-    background-color: rgb(247, 38, 1);
+    background-color: white(247, 38, 1);
   }
 
   .menu-btn {
@@ -209,7 +213,7 @@ nav a + a {
 /* ----------------- DESKTOP (≥1024px) ----------------- */
 @media (min-width: 1024px) {
   body {
-    background-color: rgb(76, 230, 15);
+    background-color: white(76, 230, 15);
   }
 
   .menu-btn {
