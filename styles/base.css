@@ -1,9 +1,8 @@
-/* --- REGLAS GLOBALES ANTI-SCROLL HORIZONTAL Y RESPONSIVE --- */
 html,
 body {
   max-width: 100%;
   overflow-x: hidden;
-  background-color: rgb(255, 255, 255);
+  background-color: #ccdbdc;
 }
 
 img,
@@ -26,8 +25,7 @@ td {
 }
 
 *,
-header,
-nav,
+header nav,
 section,
 footer,
 h1,
@@ -51,24 +49,27 @@ header.container {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: white;
-  border-bottom: 1px solid #ddd;
+  background-color: #0e6ba8;
+  border-bottom: none;
 }
 
 header.container h1 {
   font-size: 1.5rem;
   margin: 0;
+  color: azure;
 }
 
 /* Nav */
 header > nav {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  background-color: #eee019;
+  border-radius: 2.5%;
+  gap: 2rem;
 }
 
 nav a + a {
-  margin-left: 0.5rem;
   padding: 0.5rem 1rem;
   text-decoration: none;
 }
@@ -78,6 +79,7 @@ nav a + a {
   max-width: 100%;
   margin: 0 auto;
   padding: 1rem;
+  background: #f1d2f1;
 }
 
 .grid {
@@ -91,11 +93,11 @@ nav a + a {
 #agenda {
   background: #e9f1f3;
   padding: 1rem;
+  border-radius: 1%;
 }
 
 #Administrativo {
   padding: 1rem;
-
 }
 
 #PresentacionPersonal {
@@ -121,6 +123,8 @@ nav a + a {
   display: flex;
   gap: 2rem;
   list-style: none;
+  justify-content: center;
+  align-items: center;
 }
 
 /* ----------------- MÓVIL (≤480px) ----------------- */
@@ -148,25 +152,19 @@ nav a + a {
     flex: 0 0 auto;
   }
 
-  #main-nav {
-    background: none !important;
-    position: relative;
-
-  }
-
   #main-nav-list {
+    background: #a9d6e5;
     display: block;
     position: absolute;
     top: 100%;
     left: 0;
     right: 0;
-    background: rgb(252, 252, 252);
     flex-direction: column;
     text-align: center;
     gap: 1rem;
     padding: 1rem;
     margin: 0;
-    border-top: 1px ;
+    border-top: 1px;
     max-height: 0;
     opacity: 0;
     overflow: hidden;
@@ -174,7 +172,7 @@ nav a + a {
     z-index: 999;
     overflow: visible;
   }
-   #main-nav-list li {
+  #main-nav-list li {
     width: 100%;
   }
 
@@ -192,10 +190,6 @@ nav a + a {
 
 /* ----------------- TABLET (481px–1023px) ----------------- */
 @media (min-width: 481px) and (max-width: 1023px) {
-  body {
-    background-color: white(247, 38, 1);
-  }
-
   .menu-btn {
     display: none;
   }
@@ -212,10 +206,6 @@ nav a + a {
 
 /* ----------------- DESKTOP (≥1024px) ----------------- */
 @media (min-width: 1024px) {
-  body {
-    background-color: white(76, 230, 15);
-  }
-
   .menu-btn {
     display: none;
   }
