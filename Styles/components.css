@@ -1,4 +1,3 @@
-
 #patrocinadores ul li:first-child {
   font-weight: normal;
   background: none;
@@ -10,18 +9,19 @@
   overflow: auto;
 }
 .btn {
-  background: green;
-  color: rgb(19, 19, 19);
-  padding: 10px 18px;
+  background: #2c7da0;
+  color: #fbfffe;
+  padding: 0.7rem 1.2rem;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
   cursor: pointer;
-  transition: 0.2s;
-}  
-.btn:hover {
-  transform: translateY(-2px);
-  background: yellowgreen;
+  transition: 0.3s ease;
 }
+.btn:hover {
+  background: #094f7e; /* azul más oscuro */
+  transform: translateY(-2px);
+}
+
 .btn:focus-visible {
   outline: 3px solid var(--c-accent);
 }
@@ -30,28 +30,35 @@
 }
 
 .card {
-  background: rgb(159, 196, 206);
-  padding: 16px;
-  border: 1px solid #19b40b;
+  background: #a9d6e5;
+  padding: 1.5rem;
   border-radius: 12px;
-  position: relative; 
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  margin-top: 1.5rem;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  background: #a9d6e5;
 }
 
 .card p {
   margin-top: 8px;
 }
+.navbar {
+  position: relative;
+}
 
 .badge {
   background: var(--c-accent);
-  color: #fff;
-  padding: 2px 6px;
-  border-radius: 8px;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 999px;
   font-size: 0.8rem;
-  position: absolute; 
-  top: 8px;
-  right: 8px;
+  margin-left: 8px;
+  position: static;
 }
-
 
 a[target="_blank"] {
   text-decoration: underline;
@@ -59,34 +66,30 @@ a[target="_blank"] {
 img[alt] {
   border-radius: 4px;
 }
-input[type="email"] {
-  border: 2px solid var(--c-accent);
-}
+
 a[href^="https://"]
 {
   font-weight: bold;
 }
 a[href$=".pdf"] {
-  color: red;
+  color: white;
 }
-
 
 ul li:first-child {
   font-weight: bold;
-  background: #c5c51a;
-  max-width: 220px;
+  max-width: 100%;
   text-align: right;
-  
 }
 ul li:last-child {
   opacity: 0.9;
 }
-ol li:nth-first-child {
-  background: #76a74e;
+ol li:first-child {
+  width: 100%;
+  max-width: 100%;
 }
 ol li:nth-child(2n) {
-  background: #c3d806;
+  background: white;
 }
 ol li:not(:last-child) {
-  border-bottom: 1px solid #cccccc;
+  border-bottom: 1px solid white;
 }

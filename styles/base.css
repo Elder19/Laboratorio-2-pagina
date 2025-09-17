@@ -1,50 +1,221 @@
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+  background-color: #ccdbdc;
+}
 
-* {
+img,
+iframe,
+table {
+  max-width: 100%;
+  height: auto;
   box-sizing: border-box;
 }
-header,
-nav,
+
+th,
+td {
+  word-break: break-word;
+}
+
+/* Evitar anchos fijos que rompan el viewport */
+[style*="width"] {
+  max-width: 100vw !important;
+  box-sizing: border-box;
+}
+
+*,
+header nav,
 section,
 footer,
 h1,
 h2,
 p {
   margin-bottom: 1rem;
+  box-sizing: border-box;
+  max-width: auto;
 }
 
-header > nav {
-  .card .badge {
-    background: purple !important;
-  }
+body {
+  font-size: 16px;
+}
 
+/* Header */
+header.container {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column; /* h1 arriba, nav abajo */
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: #0e6ba8;
+  border-bottom: none;
+}
+
+header.container h1 {
+  font-size: 1.5rem;
+  margin: 0;
+  color: azure;
+}
+
+/* Nav */
+header > nav {
+  display: flex;
+  justify-content: center;
   align-items: center;
-  gap: 12px;
+  background-color: #eee019;
+  border-radius: 2.5%;
+  gap: 2rem;
 }
 
 nav a + a {
-  margin-left: 10px;
-  background-repeat: auto;
-  padding: 16px;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
 }
 
+/* Contenedores y grid */
 .container {
-  max-width: 660px;
+  max-width: 100%;
   margin: 0 auto;
-  padding: 16px;
+  padding: 1rem;
+  background: #f1d2f1;
 }
 
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 7px;
+  gap: 1rem;
+  background-color: aliceblue;
 }
 
+/* Secciones */
 #agenda {
   background: #e9f1f3;
-  padding: 12px;
+  padding: 1rem;
+  border-radius: 1%;
 }
+
 #Administrativo {
-  padding: 12px;
+  padding: 1rem;
+}
+
+#PresentacionPersonal {
+  background: #e9f1f3;
+  padding: 1rem;
+  width: 100%;
+  text-align: right;
+  border-radius: 6%;
+}
+
+#PresentacionPersonal ol li:nth-child(2) {
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Botón de menú */
+.menu-btn {
+  display: none; /* por defecto oculto */
+}
+
+/* Menú principal */
+#main-nav-list {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ----------------- MÓVIL (≤480px) ----------------- */
+@media (max-width: 480px) {
+  /* H1 arriba y nav debajo */
+  header.container {
+    flex-direction: column;
+    padding: 0.5rem;
+  }
+
+  header.container h1 {
+    font-size: 1.2rem;
+    margin: 0;
+    white-space: normal;
+    overflow: visible;
+  }
+
+  .menu-btn {
+    display: block;
+    font-size: 1.5rem;
+    background: gray;
+    border-radius: 20%;
+    overflow: visible;
+    cursor: pointer;
+    flex: 0 0 auto;
+  }
+
+  #main-nav-list {
+    background: #a9d6e5;
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+    padding: 1rem;
+    margin: 0;
+    border-top: 1px;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, opacity 0.3s ease;
+    z-index: 999;
+    overflow: visible;
+  }
+  #main-nav-list li {
+    width: 100%;
+  }
+
+  #main-nav-list li a {
+    display: block;
+    text-align: center; /* left / center / right */
+    padding: 0.5rem 1rem;
+  }
+
+  #main-nav[aria-expanded="true"] #main-nav-list {
+    max-height: 500px;
+    opacity: 1;
+  }
+}
+
+/* ----------------- TABLET (481px–1023px) ----------------- */
+@media (min-width: 481px) and (max-width: 1023px) {
+  .menu-btn {
+    display: none;
+  }
+
+  #main-nav-list {
+    display: flex;
+    gap: 2rem;
+    position: static;
+    max-height: none;
+    opacity: 1;
+    flex-direction: row;
+  }
+}
+
+/* ----------------- DESKTOP (≥1024px) ----------------- */
+@media (min-width: 1024px) {
+  .menu-btn {
+    display: none;
+  }
+
+  #main-nav-list {
+    display: flex;
+    gap: 7rem;
+    position: static;
+    max-height: none;
+    opacity: 1;
+    flex-direction: row;
+  }
 }

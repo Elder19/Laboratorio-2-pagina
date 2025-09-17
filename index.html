@@ -10,29 +10,62 @@
     <link rel="stylesheet" href="styles/overrides.css" />
   </head>
   <body>
+    <img src="assets/TEC.png" class="Tecimage" alt="Logo de la institucion" />
     <header class="container">
-      <img src="assets/TEC.png" alt="Logo de la institucion" />
-      <h1 style="margin-bottom: 24px">Hackathon 2025</h1>
-      <nav aria-label="Menú" class="nav-flex">
-        <a href="#sobre" data-link="sobre">Sobre el evento</a>
-        <a href="#agenda" data-link="agenda">Agenda</a>
-        <a href="#administrativo" data-.card link="admin"
-          >Personal administrativo</a
+      <h1>Hackathon 2025</h1>
+
+      <nav aria-label="Menú principal" id="main-nav" aria-expanded="false">
+        <button
+          id="menu-toggle"
+          aria-controls="main-nav-list"
+          aria-expanded="false"
+          class="menu-btn"
+          type="button"
         >
-        <a href="#registro" data-link="registro">Registro</a>
-        <a href="#ubicacion" data-link="ubicacion">Ubicación</a>
+          ☰
+        </button>
+        <ul id="main-nav-list">
+          <li><a href="#sobre">Sobre el evento</a></li>
+          <li><a href="#agenda">Agenda</a></li>
+          <li><a href="#administrativo">Personal administrativo</a></li>
+          <li><a href="#registro">Registro</a></li>
+          <li><a href="#ubicacion">Ubicación</a></li>
+        </ul>
       </nav>
     </header>
 
     <main>
       <section id="sobre" class="container card">
         <h2>Sobre el Hackathon</h2>
-        <figure>
-          <img src="assets/Hackathon.png" alt="Imagen alusiva al evento" />
-          <figcaption>
-            Donde los desarrolladores se convierten en heroes!
-          </figcaption>
-        </figure>
+        <div class="hero-art-wrapper">
+          <!-- Elementos decorativos solo desktop/tablet -->
+          <picture class="decorativo-desktop" aria-hidden="true">
+            <source
+              srcset="assets/Carreta-típica-CR.png"
+              media="(min-width:1024px)"
+            />
+            <source
+              srcset="assets/costa-rica-flag-with-grunge-texture-png.webp"
+              media="(min-width:768px)"
+            />
+            <img
+              src="assets/coraxzon.png"
+              alt=""
+              style="width: 110px; height: auto"
+            />
+          </picture>
+          <figure>
+            <img
+              src="assets/Hackathon.png"
+              alt="Imagen alusiva al evento Hackathon 2025"
+              style="width: 100%; height: auto"
+            />
+            <figcaption>
+              Donde los desarrolladores se convierten en héroes!
+            </figcaption>
+          </figure>
+        </div>
+
         <p>
           ¡Participa en la actividad más esperada del año en el TEC! Ven,
           demuestra tus habilidades y compite contra tus compañeros...
@@ -97,7 +130,7 @@
         <h2 id="personal-administrativo">Personal administrativo</h2>
         <ul>
           <li>
-            <article>
+            <article id="PresentacionPersonal">
               <h3>Elder Leon</h3>
               <img
                 src="assets/ELDER.jpg"
@@ -190,5 +223,6 @@
       <p>Contacto: Colegioempresarial20@gmail.com</p>
       <p>Tel: 71950212</p>
     </footer>
+    <script src="menu.js"></script>
   </body>
 </html>
